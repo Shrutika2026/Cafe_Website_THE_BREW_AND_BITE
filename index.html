@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to The Brew & Bite Café. Experience premium craft coffees, gourmet fast food, exquisite desserts, and a beautiful cozy ambiance. Book a table online!">
+    <title>The Brew & Bite Café | Premium Coffee & Gourmet Bites</title>
+    <link rel="preload" href="assets/Cafe.mp4" as="video" type="video/mp4">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       1. INTRO SPLASH SCREEN (VIDEO LANDING)
+       ========================================== -->
+    <div id="intro-screen">
+        <video id="intro-video" preload="auto" autoplay muted loop playsinline>
+            <source src="assets/Cafe.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <h1 class="intro-logo">THE BREW & BITE</h1>
+            <p class="intro-tagline">Crafting Experiences, One Cup at a Time</p>
+            <button class="intro-btn" id="enter-btn">Enter Café <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       MAIN APP WRAPPER (HIDDEN INITIALY)
+       ========================================== -->
+    <div id="main-app">
+
+        <!-- ==========================================
+           2. HEADER & NAVIGATION BAR
+           ========================================== -->
+        <header id="main-header">
+            <div class="navbar-container">
+                <a href="#home" class="logo-container">
+                    <i class="fas fa-coffee" style="color: var(--accent); font-size: 1.6rem;"></i>
+                    <span class="logo-text">The Brew & Bite</span>
+                </a>
+                
+                <nav class="nav-links" id="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#featured-specials" class="nav-link">Specials</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#reservation" class="nav-link">Reserve</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                    <a href="#events" class="nav-link">Events</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#faq" class="nav-link">FAQs</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                    <div class="nav-actions">
+                    <button class="icon-btn theme-toggle" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="icon-btn" id="fav-toggle-btn" aria-label="Open Favourites">
+                        <i class="fas fa-heart"></i>
+                        <span class="cart-badge fav-badge" id="fav-count" style="background:#ef4444;">0</span>
+                    </button>
+                    <button class="icon-btn" id="cart-toggle-btn" aria-label="Open Shopping Cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </button>
+                    <button class="btn-book-nav" onclick="document.getElementById('reservation').scrollIntoView();">Book a Table</button>
+                    <button class="menu-btn" id="menu-toggle-btn" aria-label="Open Navigation Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==========================================
+           3. HERO BANNER SECTION (MAIN PAGE)
+           ========================================== -->
+        <section id="home" class="fade-in-section">
+            <div class="hero-wrapper">
+                <span class="hero-tag">Welcome to The Brew & Bite</span>
+                <h2 class="hero-heading">Where Every Sip Tells A Story</h2>
+                <p class="hero-sub">Indulge in artisanal coffees, crispy fast bites, and heavenly desserts crafted by award-winning baristas.</p>
+                <div class="hero-ctas">
+                    <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView();">Explore Menu</button>
+                    <button class="btn-secondary" onclick="document.getElementById('reservation').scrollIntoView();">Reserve Table</button>
+                </div>
+            </div>
+
+            <!-- Floating Info Cards -->
+            <div class="hero-floating-cards">
+                <div class="floating-card">
+                    <i class="far fa-clock"></i>
+                    <div>
+                        <div class="floating-card-title">Opening Hours</div>
+                        <div class="floating-card-sub">Mon-Fri: 8 AM - 10 PM</div>
+                    </div>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <div class="floating-card-title">Our Location</div>
+                        <div class="floating-card-sub">123 Espresso Lane, IT Square</div>
+                    </div>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <div class="floating-card-title">Call Reservations</div>
+                        <div class="floating-card-sub">+91 98765 43210</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           4. ABOUT US SECTION
+           ========================================== -->
+        <section id="about" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Our Heritage</span>
+                <h3 class="section-title">The Brew & Bite Story</h3>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-details slide-from-left">
+                    <h3>We Serve Passion, Brew Quality, & Bake Joy Since 2015</h3>
+                    <p>The Brew & Bite Café was founded on a simple philosophy: to bring together premium single-origin coffee beans and delicious, fresh gourmet bites in a beautiful, warm, and creative ambiance. Our beans are sourced directly from ethical, sustainable farms in Coorg and roasted locally to extract peak flavor profile.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Coffee Blends</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Award Chefs</span>
+                        </div>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature-box">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>100% Fresh Ingredients</h4>
+                                <p>We prepare our food fresh daily with zero artificial preservatives or additives.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Award Winning Baristas</h4>
+                                <p>Our baristas are certified experts in milk texturing, latte art, and brewing profiles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual slide-from-right">
+                    <div class="visual-card vc-1">
+                        <img src="assets/interior.jpg" alt="Cafe Cozy Seating">
+                    </div>
+                    <div class="visual-card vc-2">
+                        <img src="assets/sig_cappuccino.png" alt="Coffee Brewing">
+                    </div>
+                    <div class="vc-badge">
+                        <span>10+</span>
+                        <label>Years of Craft</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           4b. FEATURED SPECIALS SECTION
+           ========================================== -->
+        <section id="featured-specials" class="fade-in-section">
+            <div class="featured-wrap">
+                <div class="section-header">
+                    <span class="section-tag">Handpicked For You</span>
+                    <h3 class="section-title">Featured Specials</h3>
+                </div>
+                <div class="featured-bento" id="featured-bento-container">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           4c. COFFEE EXPERIENCE SECTION
+           ========================================== -->
+        <section id="experience" class="fade-in-section">
+            <div class="experience-container">
+                <div class="experience-content">
+                    <span class="section-tag">Why The Brew & Bite</span>
+                    <h3 class="section-title experience-title">A Coffee Experience Like No Other</h3>
+                    <div class="experience-steps">
+                        <div class="experience-step">
+                            <span class="step-number">01</span>
+                            <div>
+                                <h4>Premium Coffee Beans</h4>
+                                <p>We source freshly roasted Arabica beans for rich flavor and aroma.</p>
+                            </div>
+                        </div>
+                        <div class="experience-step">
+                            <span class="step-number">02</span>
+                            <div>
+                                <h4>Freshly Prepared Food</h4>
+                                <p>Every burger, sandwich, and pizza is prepared fresh to order.</p>
+                            </div>
+                        </div>
+                        <div class="experience-step">
+                            <span class="step-number">03</span>
+                            <div>
+                                <h4>Cozy Café Ambience</h4>
+                                <p>Relax, work, or meet friends in our warm and modern café environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-visual">
+                    <div class="exp-card exp-card-1">
+                        <img src="assets/sig_cappuccino.png" alt="Signature Cappuccino">
+                        <span class="premium-badge badge-best-seller">Best Seller</span>
+                    </div>
+                    <div class="exp-card exp-card-2">
+                        <img src="assets/interior.jpg" alt="Cozy Café Interior">
+                        <span class="premium-badge badge-staff-pick">Staff Pick</span>
+                    </div>
+                    <div class="exp-card exp-card-3">
+                        <img src="assets/brownie_ice_cream.jpg" alt="Chocolate Brownie Delight">
+                        <span class="premium-badge badge-customer-fav">Customer Favorite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           5. MENU SECTION
+           ========================================== -->
+        <section id="menu" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Taste Our Best</span>
+                <h3 class="section-title">Explore Our Menu</h3>
+            </div>
+
+            <div class="menu-controls">
+                <div class="menu-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="menu-search-input" placeholder="Search menu items (e.g. Pizza, Cappuccino)...">
+                </div>
+                <div class="menu-tabs" id="menu-categories-tabs">
+                    <!-- Categories will be rendered dynamically by JS -->
+                </div>
+            </div>
+
+            <div class="menu-grid" id="menu-grid-container">
+                <!-- Menu items will be rendered dynamically by JS -->
+            </div>
+            <div class="section-view-all" id="menu-view-all-wrapper" hidden>
+                <button class="btn-secondary" id="menu-view-all-btn">
+                    Explore Full Menu <i class="fas fa-utensils"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           6. RESERVATION & INTERACTIVE TABLE MAP SECTION
+           ========================================== -->
+        <section id="reservation" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Secure a Spot</span>
+                <h3 class="section-title">Table Booking System</h3>
+            </div>
+
+            <div class="reservation-container">
+                <div class="floor-map-wrapper slide-from-right">
+                    <div class="floor-map-card">
+                        <h4 class="floor-map-title">Interactive Cafe Layout</h4>
+                        <p class="floor-map-subtitle">2 Floors · 29 Tables · 92 Seats — Select your floor and click an available table to book.</p>
+                        
+                        <!-- Tables grid layout -->
+                        <div class="floor-grid" id="seating-floor-grid">
+                            <!-- Rendered dynamically by JS -->
+                        </div>
+
+                        <!-- Legends -->
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <span class="legend-color available"></span>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color reserved"></span>
+                                <span>Reserved</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color selected"></span>
+                                <span>Selected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-wrapper slide-from-left">
+                    <form id="reservation-form" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="booking-name">Full Name *</label>
+                                <input type="text" id="booking-name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-email">Email Address *</label>
+                                <input type="email" id="booking-email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-phone">Phone Number *</label>
+                                <input type="tel" id="booking-phone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}" inputmode="numeric" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-guests">Number of Guests *</label>
+                                <select id="booking-guests" required>
+                                    <option value="" disabled selected>Select Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="6">6 Guests (Premium Seating)</option>
+                                    <option value="8">8 Guests (Group Table)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-date">Reservation Date *</label>
+                                <input type="date" id="booking-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time">Reservation Time *</label>
+                                <select id="booking-time" required>
+                                    <option value="" disabled selected>Select Time Slot</option>
+                                    <option value="08:00 AM">08:00 AM - 10:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM - 12:00 PM</option>
+                                    <option value="12:00 PM">12:00 PM - 02:00 PM</option>
+                                    <option value="02:00 PM">02:00 PM - 04:00 PM</option>
+                                    <option value="04:00 PM">04:00 PM - 06:00 PM</option>
+                                    <option value="06:00 PM">06:00 PM - 08:00 PM</option>
+                                    <option value="08:00 PM">08:00 PM - 10:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="booking-table">Selected Table ID</label>
+                                <input type="text" id="booking-table" readonly placeholder="Please select a table from the map layout" style="background: rgba(255,255,255,0.05); font-weight: 700;">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="booking-request">Special Request / Message</label>
+                                <textarea id="booking-request" placeholder="E.g. Anniversary celebration, wheelchair access, high chair..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit-booking">Book Table Now <i class="fas fa-calendar-check"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           7. GALLERY SECTION
+           ========================================== -->
+        <section id="gallery" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Visual Treats</span>
+                <h3 class="section-title">Photo Gallery</h3>
+            </div>
+
+            <div class="gallery-controls">
+                <button class="tab-btn active" data-gallery-filter="all">All</button>
+                <button class="tab-btn" data-gallery-filter="interior">Interior</button>
+                <button class="tab-btn" data-gallery-filter="food"><img src="https://i.pinimg.com/736x/f0/89/8b/f0898bdce9af11b488c41ecaed4a3de2.jpg" alt="Food" style="width:28px;height:20px;object-fit:cover;border-radius:4px;margin-right:6px;vertical-align:middle">Food</button>
+                <button class="tab-btn" data-gallery-filter="coffee"><img src="https://i.pinimg.com/736x/a5/f9/dc/a5f9dcd650d31055ac08d1152ac86c8f.jpg" alt="Coffee" style="width:28px;height:20px;object-fit:cover;border-radius:4px;margin-right:6px;vertical-align:middle">Coffee</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid-container">
+                <!-- Rendered dynamically by JS -->
+            </div>
+            <div class="section-view-all" id="gallery-view-all-wrapper" hidden>
+                <button class="btn-secondary" id="gallery-view-all-btn">
+                    View All Photos <i class="fas fa-images"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           8. TESTIMONIALS SECTION
+           ========================================== -->
+        <section id="testimonials" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Reviews</span>
+                <h3 class="section-title">Customer Feedback</h3>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="slider-container">
+                    <button class="slider-arrow prev" id="slider-prev-btn" aria-label="Previous Review"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-arrow next" id="slider-next-btn" aria-label="Next Review"><i class="fas fa-chevron-right"></i></button>
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="testimonial-slider-track">
+                            <!-- Testimonial slides will be populated by JS -->
+                        </div>
+                    </div>
+                    <div class="slider-dots" id="slider-dots-container">
+                        <!-- Dots will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="review-form-card">
+                    <h3>Share Your Experience</h3>
+                    <form id="add-review-form" novalidate>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Your Rating *</label>
+                            <div class="rating-select" id="rating-stars-container">
+                                <i class="fas fa-star" data-rating="1"></i>
+                                <i class="fas fa-star" data-rating="2"></i>
+                                <i class="fas fa-star" data-rating="3"></i>
+                                <i class="fas fa-star" data-rating="4"></i>
+                                <i class="fas fa-star" data-rating="5"></i>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.2rem;">
+                            <label for="review-name">Name *</label>
+                            <input type="text" id="review-name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="review-text">Your Review *</label>
+                            <textarea id="review-text" required placeholder="Write your review here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           9. EVENTS & BLOG SECTION
+           ========================================== -->
+        <section id="events" class="fade-in-section" style="padding-bottom: 4rem;">
+            <div class="section-header">
+                <span class="section-tag">Happening Here</span>
+                <h3 class="section-title">Upcoming Café Events</h3>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="assets/interior.jpg" alt="Live Music Night">
+                        <div class="event-date-badge">JUNE<br>19</div>
+                    </div>
+                    <div class="event-content">
+                        <h4 class="event-title">Acoustic Live Music Sessions</h4>
+                        <p class="event-desc">Enjoy soothing acoustic cover versions of pop and jazz hits played live by local indie artists while sipping your mocha.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 7:30 PM Onwards</span>
+                            <span><i class="fas fa-ticket-alt"></i> Entry Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="assets/sig_cappuccino.png" alt="Coffee Workshop">
+                        <div class="event-date-badge">JUNE<br>25</div>
+                    </div>
+                    <div class="event-content">
+                        <h4 class="event-title">Latte Art & Brewing Masterclass</h4>
+                        <p class="event-desc">Learn the secrets of making the perfect espresso, milk texturing, and beautiful leaf/heart patterns from our Head Barista.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 10:00 AM - 1:00 PM</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹999 / Person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="assets/dessert.jpg" alt="Cupcake Workshop">
+                        <div class="event-date-badge">JULY<br>02</div>
+                    </div>
+                    <div class="event-content">
+                        <h4 class="event-title">Dessert & Coffee Pairing Evening</h4>
+                        <p class="event-desc">An exclusive tasting session featuring gourmet cheesecakes, tiramisu, and tarts paired expertly with specialty dark roasts.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 6:00 PM - 8:30 PM</span>
+                            <span><i class="fas fa-rupee-sign"></i> ₹650 / Person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="assets/beverage.jpg" alt="Board Games Night">
+                        <div class="event-date-badge">JULY<br>10</div>
+                    </div>
+                    <div class="event-content">
+                        <h4 class="event-title">Brew & Board Games Tournament</h4>
+                        <p class="event-desc">Join us for an exciting evening of board games (Catan, Ticket to Ride, Chess) with unlimited complimentary fresh-baked cookies and flat whites.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 5:00 PM - 9:00 PM</span>
+                            <span><i class="fas fa-ticket-alt"></i> Entry Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+           10. BLOG SECTION
+           ========================================== -->
+        <section id="blog" class="fade-in-section" style="padding-top: 4rem;">
+            <div class="section-header">
+                <span class="section-tag">Café Chronicles</span>
+                <h3 class="section-title">Latest Articles</h3>
+            </div>
+
+            <div class="blog-grid" id="blog-grid-container">
+                <!-- Blog cards rendered by JS -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+           11. FAQ SECTION
+           ========================================== -->
+        <section id="faq" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Got Questions?</span>
+                <h3 class="section-title">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="faq-container" id="faq-accordion-container">
+                <!-- FAQs rendered dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+           12. CONTACT SECTION
+           ========================================== -->
+        <section id="contact" class="fade-in-section">
+            <div class="section-header">
+                <span class="section-tag">Reach Out</span>
+                <h3 class="section-title">Contact & Find Us</h3>
+            </div>
+
+            <!-- ── Top row: info cards + message form ── -->
+            <div class="contact-container">
+                <!-- Column 1: Info cards -->
+                <div class="contact-left-col slide-from-left">
+                    <div class="contact-info-list-wrapper">
+                        <div class="contact-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>123 Espresso Lane, IT Square, Sector-5, Bandra West, Mumbai - 400050</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Get In Touch</h4>
+                                <p>Phone: +91 98765 43210&#10;Email: hello@brewandbite.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8 AM - 10 PM&#10;Saturday - Sunday: 9 AM - 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Message form -->
+                <div class="contact-right-col slide-from-right">
+                    <div class="booking-form-wrapper" style="padding: 2.2rem;">
+                        <h4 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 1.2rem; font-size: 1.25rem;">
+                            <i class="far fa-paper-plane" style="color: var(--accent); margin-right: 0.4rem;"></i> Send Us a Message
+                        </h4>
+                        <form id="contact-message-form" novalidate>
+                            <div class="form-grid" style="grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name *</label>
+                                    <input type="text" id="contact-name" required placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input type="email" id="contact-email" required placeholder="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message">Your Message *</label>
+                                    <textarea id="contact-message" required placeholder="How can we help you? (E.g. catering requests, events hiring, feedback...)" style="height: 90px;"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-submit-booking" style="padding: 0.85rem; font-size: 0.95rem;">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Find Us: Map + Image ── -->
+            <div class="findus-row slide-from-left">
+
+                <!-- Left: Google Map -->
+                <div class="findus-map-col">
+                    <iframe
+                        class="findus-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.6!2d72.8296!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b888ae67fd%3A0x1e2c7e54b2ac4b76!2sBandra%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="The Brew & Bite Location">
+                    </iframe>
+                    <!-- Dark overlay -->
+                    <div class="findus-map-overlay"></div>
+                    <!-- Glassmorphism location card -->
+                    <div class="findus-location-card">
+                        <div class="findus-pin-ring">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="findus-cafe-name">The Brew &amp; Bite</h3>
+                        <p class="findus-address">
+                            123 Espresso Lane,<br>
+                            Bandra West,<br>
+                            Mumbai – 400050
+                        </p>
+                        <div class="findus-contact-lines">
+                            <span><i class="fas fa-phone-alt"></i> +91 98765 43210</span>
+                            <span><i class="fas fa-envelope"></i> hello@thebrewandbite.com</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Bandra+West+Mumbai" target="_blank" rel="noopener" class="findus-maps-btn">
+                            Open in Maps <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Cafe Image -->
+                <div class="findus-img-col">
+                    <img
+                        src="https://i.pinimg.com/736x/c3/d8/a1/c3d8a1d8d465a640390caed4ff5effa9.jpg"
+                        alt="The Brew & Bite Café Interior"
+                        class="findus-img"
+                        loading="lazy">
+                    <!-- Bottom gradient overlay with text -->
+                    <div class="findus-img-overlay">
+                        <h3 class="findus-img-title">The Brew &amp; Bite</h3>
+                        <p class="findus-img-sub">Premium Coffee &bull; Gourmet Burgers &bull; Fresh Desserts</p>
+                        <div class="findus-img-hours">
+                            <span class="findus-hours-badge">Open Daily</span>
+                            <span class="findus-hours-time">8:00 AM – 11:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+           13. FOOTER
+           ========================================== -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">THE BREW &amp; <span>BITE</span></a>
+                    <p>We serve carefully sourced single-origin artisanal coffee pairings with tandoori burgers, signature pizzas, fresh snacks, and rich brownie lava cakes.</p>
+                    <div class="footer-contact-lines">
+                        <p>📍 123 Espresso Lane, IT Square, Sector-5,<br>&nbsp;&nbsp;&nbsp;&nbsp;Bandra West, Mumbai – 400050</p>
+                        <p>📞 +91 98765 43210 &nbsp;|&nbsp; ✉️ hello@brewandbite.com</p>
+                        <p>🕒 Mon – Fri: 8:00 AM – 10:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Sat – Sun: 9:00 AM – 11:00 PM</p>
+                        <p>🌐 www.thebrewandbite.com</p>
+                        <p class="footer-tagline-line">☕ Great Coffee &nbsp;•&nbsp; 🍔 Great Food &nbsp;•&nbsp; ✨ Great Vibes</p>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="social-icon" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Our Cafe</a>
+                        <a href="#menu">Our Menu</a>
+                        <a href="#reservation">Table Reservations</a>
+                        <a href="#gallery">Photo Gallery</a>
+                        <a href="#testimonials">Reviews</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <div class="footer-hours-list">
+                        <div class="footer-hours-row">
+                            <span>Monday - Friday</span>
+                            <span>8:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Saturday</span>
+                            <span>9:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Sunday</span>
+                            <span>9:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="footer-hours-row" style="color: var(--accent); font-weight: 600; margin-top: 0.5rem;">
+                            <span>* Happy Hours</span>
+                            <span>4 PM - 7 PM Daily</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive 15% discount on your first booking and stay updated on menu launches!</p>
+                    <form class="footer-newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Join</button>
+                    </form>
+
+                    <!-- Awards & Recognition -->
+                    <div class="footer-awards">
+                        <h5 class="footer-awards-title">Awards & Recognition</h5>
+                        <ul class="footer-awards-list">
+                            <li>🏆 Best Café in Mumbai 2025</li>
+                            <li>⭐ Award-Winning Specialty Coffee</li>
+                            <li>🌱 Sustainably Sourced Coffee Beans</li>
+                            <li>🥇 Excellence in Hospitality 2025</li>
+                            <li>☕ Premium Artisan Coffee Roastery</li>
+                            <li>🏅 Customer Choice Café Award</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 The Brew &amp; Bite Café. All rights reserved.</span>
+                <span>Terms of Service | Privacy Policy</span>
+            </div>
+        </footer>
+
+        <!-- ==========================================
+           14. SHOPPING CART DRAWER (SIDEBAR)
+           ========================================== -->
+        <div id="cart-drawer">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag" style="color: var(--accent);"></i> Your Order Cart</h3>
+                <button class="btn-close-cart" id="cart-close-btn">&times;</button>
+            </div>
+            
+            <div class="cart-items-container" id="cart-items-container">
+                <!-- Cart items rendered dynamically by JS -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₹0.00</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Taxes (CGST + SGST 18%)</span>
+                    <span id="cart-tax">₹0.00</span>
+                </div>
+                <div class="cart-summary-row total">
+                    <span>Total Bill</span>
+                    <span id="cart-total">₹0.00</span>
+                </div>
+                <button class="btn-checkout" id="cart-checkout-btn">Checkout Order <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+    </div> <!-- END MAIN APP WRAPPER -->
+
+    <!-- ── Delivery Choice Modal ── -->
+    <div class="modal-overlay" id="delivery-choice-modal">
+        <div class="modal-card delivery-choice-card">
+            <div class="delivery-choice-header">
+                <i class="fas fa-utensils"></i>
+                <h4>How would you like your order?</h4>
+                <p>Choose your preferred delivery method</p>
+            </div>
+            <div class="delivery-choice-btns">
+                <button class="delivery-opt-btn" id="choose-home-delivery">
+                    <i class="fas fa-motorcycle"></i>
+                    <span class="opt-title">Home Delivery</span>
+                    <span class="opt-sub">Delivered to your door in 15–20 min</span>
+                </button>
+                <button class="delivery-opt-btn" id="choose-dine-in">
+                    <i class="fas fa-chair"></i>
+                    <span class="opt-title">Dine-in / Table Pick-up</span>
+                    <span class="opt-sub">Collect at counter or served at your table</span>
+                </button>
+            </div>
+            <button class="delivery-choice-cancel" id="delivery-choice-cancel">Cancel</button>
+        </div>
+    </div>
+
+    <!-- ── Home Delivery Form Modal ── -->
+    <div class="modal-overlay" id="delivery-form-modal">
+        <div class="modal-card delivery-form-card">
+            <div class="ticket-header" style="background:linear-gradient(135deg,#1a1208 0%,#2b1d0a 100%);">
+                <i class="fas fa-motorcycle" style="color:var(--accent);"></i>
+                <h4>Home Delivery Details</h4>
+                <p>We'll deliver fresh to your doorstep</p>
+            </div>
+            <div class="delivery-form-body">
+                <div class="form-group">
+                    <label for="del-name">Full Name *</label>
+                    <input type="text" id="del-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="del-phone">Contact Number *</label>
+                    <input type="tel" id="del-phone" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="del-address">Delivery Address *</label>
+                    <textarea id="del-address" placeholder="Flat no., Building, Street, Area..." style="height:80px;" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="del-landmark">Landmark (optional)</label>
+                    <input type="text" id="del-landmark" placeholder="Near landmark / instructions for delivery partner">
+                </div>
+                <div class="delivery-form-footer">
+                    <button class="sp-btn sp-btn-cancel" id="delivery-form-back">← Back</button>
+                    <button class="sp-btn sp-btn-confirm" id="delivery-form-submit">Place Order <i class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Delivery Success Modal ── -->
+    <div class="modal-overlay" id="delivery-success-modal">
+        <div class="modal-card">
+            <div class="ticket-header" style="background:linear-gradient(135deg,#1a1208 0%,#2b1d0a 100%);">
+                <i class="fas fa-check-circle" style="color:#10b981;font-size:2.8rem;"></i>
+                <h4>Order Placed!</h4>
+                <p>The Brew & Bite — Delivery Slip</p>
+            </div>
+            <div class="ticket-body">
+                <div class="ticket-info-list" style="margin-bottom:1.5rem;">
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Order Reference:</span>
+                        <span class="ticket-info-val" style="font-family:monospace;" id="del-order-ref"></span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Deliver To:</span>
+                        <span class="ticket-info-val" id="del-success-name"></span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Address:</span>
+                        <span class="ticket-info-val" id="del-success-address" style="font-size:0.82rem;"></span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Total Paid:</span>
+                        <span class="ticket-info-val" style="color:var(--accent);font-weight:700;" id="del-success-total"></span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Estimated Time:</span>
+                        <span class="ticket-info-val" style="color:#10b981;font-weight:700;">🚴 Arriving in 15–20 minutes</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem;text-align:center;color:var(--text-muted);margin-bottom:1.5rem;">Your order is being prepared! Our delivery partner will contact you shortly.</p>
+                <button class="ticket-footer-btn" id="delivery-success-close" style="background:#10b981;">Great, Thank You! 🎉</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Favourites Drawer ── -->
+    <div id="fav-drawer">
+        <div class="cart-header">
+            <h3><i class="fas fa-heart" style="color:#ef4444;"></i> Your Favourites</h3>
+            <button class="btn-close-cart" id="fav-close-btn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="fav-items-container">
+            <div class="cart-empty-state">
+                <i class="fas fa-heart-broken"></i>
+                <p>No favourites yet.</p>
+                <p style="font-size:0.8rem;margin-top:0.5rem;">Tap the ♥ on any menu item to save it here!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       15. DIALOGS & OVERLAY POPUPS
+       ========================================== -->
+
+    <!-- Gallery Lightbox -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+            <img src="" id="lightbox-img" alt="Lightbox Image View">
+            <div class="lightbox-title" id="lightbox-title-text">Image Detail</div>
+        </div>
+    </div>
+
+    <!-- Booking Ticket success Modal -->
+    <div class="modal-overlay" id="ticket-modal">
+        <div class="modal-card">
+            <div class="ticket-header">
+                <i class="fas fa-check-circle"></i>
+                <h4>Booking Confirmed!</h4>
+                <p>Brew & Bite Seating Ticket</p>
+            </div>
+            <div class="ticket-body">
+                <div class="ticket-info-list">
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Customer Name:</span>
+                        <span class="ticket-info-val" id="ticket-res-name">John Doe</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Date & Time:</span>
+                        <span class="ticket-info-val" id="ticket-res-datetime">June 16, 2026 at 7:00 PM</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Table Reserved:</span>
+                        <span class="ticket-info-val" style="color: var(--accent); font-weight: 700;" id="ticket-res-table">Table T3 (4 Seater)</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Guest Count:</span>
+                        <span class="ticket-info-val" id="ticket-res-guests">4 Guests</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Confirmation Code:</span>
+                        <span class="ticket-info-val" style="font-family: monospace;" id="ticket-res-code">BB-9481-X</span>
+                    </div>
+                </div>
+                <div class="ticket-barcode">
+                    <!-- Stylized mockup barcode with SVGs -->
+                    <svg class="barcode-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20">
+                        <rect x="0" y="0" width="3" height="20" />
+                        <rect x="5" y="0" width="1" height="20" />
+                        <rect x="8" y="0" width="2" height="20" />
+                        <rect x="12" y="0" width="4" height="20" />
+                        <rect x="18" y="0" width="1" height="20" />
+                        <rect x="21" y="0" width="3" height="20" />
+                        <rect x="26" y="0" width="2" height="20" />
+                        <rect x="30" y="0" width="1" height="20" />
+                        <rect x="33" y="0" width="4" height="20" />
+                        <rect x="39" y="0" width="2" height="20" />
+                        <rect x="43" y="0" width="1" height="20" />
+                        <rect x="46" y="0" width="3" height="20" />
+                        <rect x="51" y="0" width="1" height="20" />
+                        <rect x="54" y="0" width="4" height="20" />
+                        <rect x="60" y="0" width="2" height="20" />
+                        <rect x="64" y="0" width="1" height="20" />
+                        <rect x="67" y="0" width="3" height="20" />
+                        <rect x="72" y="0" width="1" height="20" />
+                        <rect x="75" y="0" width="2" height="20" />
+                        <rect x="79" y="0" width="4" height="20" />
+                        <rect x="85" y="0" width="1" height="20" />
+                        <rect x="88" y="0" width="3" height="20" />
+                        <rect x="93" y="0" width="2" height="20" />
+                        <rect x="97" y="0" width="3" height="20" />
+                    </svg>
+                    <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600; letter-spacing: 2px;">SCAN AT ENTRANCE</span>
+                </div>
+                <button class="ticket-footer-btn" id="ticket-modal-close-btn" style="margin-top: 2rem;">Awesome, See You There!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Read Modal -->
+    <div class="modal-overlay" id="blog-detail-modal">
+        <div class="modal-card blog-modal">
+            <button class="lightbox-close" id="blog-modal-close-btn" style="top: 15px; right: 15px; z-index: 100;">&times;</button>
+            <img src="" class="blog-modal-img" id="blog-modal-image" alt="Blog Image Detail">
+            <div class="blog-modal-content">
+                <span class="blog-category" id="blog-modal-category">Brewing Tips</span>
+                <h4 class="blog-modal-title" id="blog-modal-title">Blog Post Title</h4>
+                <div class="blog-modal-meta">
+                    <span id="blog-modal-date"><i class="far fa-calendar"></i> June 12, 2026</span>
+                    <span id="blog-modal-author"><i class="far fa-user"></i> By Admin</span>
+                </div>
+                <div class="blog-modal-text" id="blog-modal-body">
+                    <!-- Body paragraphs will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Success Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-card">
+            <div class="ticket-header" style="background: linear-gradient(135deg, #2e4438 0%, #15261e 100%);">
+                <i class="fas fa-shopping-basket" style="color: #10b981;"></i>
+                <h4 style="color:#fff;">Order Placed Successfully!</h4>
+                <p style="color:rgba(255,255,255,0.85);">The Brew &amp; Bite Kitchen Slip</p>
+            </div>
+            <div class="ticket-body">
+                <div class="ticket-info-list" style="margin-bottom: 2rem;">
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Order Reference:</span>
+                        <span class="ticket-info-val" style="font-family: monospace;" id="checkout-order-ref">BB-ORDER-5832</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Total Amount Paid:</span>
+                        <span class="ticket-info-val" style="color: var(--accent); font-weight: 700;" id="checkout-order-total">₹450.00</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Estimated Prep Time:</span>
+                        <span class="ticket-info-val" id="checkout-order-time">15 - 20 minutes</span>
+                    </div>
+                    <div class="ticket-info-row">
+                        <span class="ticket-info-label">Order Type:</span>
+                        <span class="ticket-info-val">Dine-in / Table Pick-up</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Please present this code to your server or at the pick-up counter to collect your delicious bites.</p>
+                <button class="ticket-footer-btn" id="checkout-modal-close-btn" style="background: #10b981;">Perfect, I'm Ready!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       16. FLOATING ACTIONS (WHATSAPP & SCROLL TOP)
+       ========================================== -->
+    <div class="floating-widgets">
+        <a href="https://wa.me/919876543210?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20table%20bookings%20at%20Brew%20and%20Bite." class="icon-btn btn-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="icon-btn" id="scroll-top" aria-label="Scroll to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Core App Logic Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>
